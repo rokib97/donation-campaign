@@ -4,7 +4,7 @@ const Banner = () => {
   const [value, setValue] = React.useState("");
   const onChange = ({ target }) => setValue(target.value);
   return (
-    <div className="relative flex flex-col justify-center items-center border-2 border-red-500 h-[500px]">
+    <div className="relative flex flex-col justify-center items-center  h-[450px]">
       <div className="absolute inset-0 bg-[url('./Resources/bg.png')] bg-cover bg-center bg-no-repeat opacity-10"></div>
       <h1 className="mb-4 text-4xl font-bold">
         I Grow By Helping People In Need
