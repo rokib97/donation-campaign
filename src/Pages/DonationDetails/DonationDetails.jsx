@@ -9,10 +9,15 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useDonationData from "../../Hooks/useDonationData";
 import CustomSpinner from "../../components/CustomSpinner/CustomSpinner";
+import { saveToLocalStorage } from "../../utils/localStorage";
 const DonationDetails = () => {
   const [singleData, setSingleData] = useState({});
   const { id } = useParams();
   const { data, loading } = useDonationData();
+
+  const handleDonateData = () => {
+    saveToLocalStorage(singleData);
+  };
 
   useEffect(() => {
     if (data) {
@@ -39,6 +44,7 @@ const DonationDetails = () => {
           className="absolute bottom-0 bg-opacity-40 bg-black w-full h-28 rounded-b-md flex items-center pl-8"
         >
           <Button
+            onClick={handleDonateData}
             style={{ backgroundColor: textColor }}
             className="rounded-sm capitalize text-xl"
             color="red"

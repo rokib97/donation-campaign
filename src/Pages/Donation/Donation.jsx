@@ -1,3 +1,17 @@
+import { useEffect, useState } from "react";
+import { getFromLocalStorage } from "../../utils/localStorage";
+
 export default function Donation() {
-  return <h1>Donation</h1>;
+  const [data, setData] = useState([]);
+  console.log(data);
+  useEffect(() => {
+    setData(getFromLocalStorage);
+  }, []);
+  return (
+    <div>
+      {data.map((item) => (
+        <p key={item.id}>{item.title}</p>
+      ))}
+    </div>
+  );
 }
