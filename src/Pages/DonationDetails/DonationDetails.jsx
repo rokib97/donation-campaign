@@ -55,14 +55,14 @@ const DonationDetails = () => {
       </CardHeader>
       <CardBody className="p-0 my-7">
         <Typography className="text-4xl" variant="h4" color="blue-gray">
-          {title}
+          {title || "Title Placeholder"}
         </Typography>
         <Typography
           variant="lead"
           color="gray"
           className="mt-3 font-normal p-0"
         >
-          {description}
+          {description || "Description Placeholder"}
         </Typography>
       </CardBody>
     </Card>
