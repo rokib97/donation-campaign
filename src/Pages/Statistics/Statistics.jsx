@@ -14,7 +14,7 @@ import useLocalStorage from "../../Hooks/useLocalStorage";
 const Statistics = () => {
   const { data: donationData } = useDonationData();
   const { data: localStorageData } = useLocalStorage();
-  console.log(donationData.length, localStorageData.length);
+
   const data = [
     { name: "Your Donation", value: localStorageData.length },
     {
