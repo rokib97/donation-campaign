@@ -1,19 +1,15 @@
 import { Button } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
-import { getFromLocalStorage } from "../../utils/localStorage";
+import { useState } from "react";
+import useLocalStorage from "../../Hooks/useLocalStorage";
 import DonationCard from "./DonationCard";
 
 export default function Donation() {
-  const [data, setData] = useState([]);
+  const { data } = useLocalStorage();
   const [showAll, setShowAll] = useState(false);
-  console.log(data);
-
   const handleShowAll = () => {
     setShowAll(!showAll);
   };
-  useEffect(() => {
-    setData(getFromLocalStorage);
-  }, []);
+
   return (
     <>
       <div className="mt-8 max-w-7xl mx-auto grid grid-cols-2 gap-6">
