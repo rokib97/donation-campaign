@@ -11,8 +11,8 @@ export const saveToLocalStorage = (data) => {
   if (!existedData) {
     savedData.push(data);
     localStorage.setItem("donate", JSON.stringify(savedData));
-    toast("Donation Added Successfully!");
+    toast.success("Donation Added Successfully!");
   } else {
-    toast("Already exits!");
+    toast.error("Already exits!");
   }
 };
