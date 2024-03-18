@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+
 import useDonationData from "../../Hooks/useDonationData";
 import Banner from "../../components/Banner/Banner";
 import CategoryList from "../../components/CategoryList/CategoryList";
-
 export default function Home() {
   const [value, setValue] = useState("");
   const { data, loading } = useDonationData();
