@@ -1,5 +1,4 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { NavLink } from "react-router-dom";
 import {
   Collapse,
   IconButton,
@@ -7,6 +6,8 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import React from "react";
+import { NavLink } from "react-router-dom";
+import CustomSpinner from "../../../components/CustomSpinner/CustomSpinner";
 export function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
@@ -18,7 +19,15 @@ export function NavList() {
       >
         <NavLink
           to={"/"}
-          className="flex items-center hover:text-blue-500 transition-colors text-2xl"
+          className={({ isActive, isPending }) =>
+            isActive ? (
+              "text-red-500 font-bold underline text-xl"
+            ) : isPending ? (
+              <CustomSpinner />
+            ) : (
+              "flex items-center hover:text-red-500 text-xl transition-colors"
+            )
+          }
         >
           Home
         </NavLink>
@@ -31,7 +40,15 @@ export function NavList() {
       >
         <NavLink
           to={"/donation"}
-          className="flex items-center hover:text-blue-500 transition-colors text-2xl"
+          className={({ isActive, isPending }) =>
+            isActive ? (
+              "text-red-500 font-bold underline text-xl"
+            ) : isPending ? (
+              <CustomSpinner />
+            ) : (
+              "flex items-center hover:text-red-500 text-xl transition-colors"
+            )
+          }
         >
           Donation
         </NavLink>
@@ -44,7 +61,15 @@ export function NavList() {
       >
         <NavLink
           to={"/statistics"}
-          className="flex items-center hover:text-blue-500 transition-colors text-2xl"
+          className={({ isActive, isPending }) =>
+            isActive ? (
+              "text-red-500 font-bold underline text-xl"
+            ) : isPending ? (
+              <CustomSpinner />
+            ) : (
+              "flex items-center hover:text-red-500 text-xl transition-colors"
+            )
+          }
         >
           Statistics
         </NavLink>

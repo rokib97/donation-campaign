@@ -60,7 +60,7 @@ const Statistics = () => {
             border: "1px solid #cccc",
           }}
         >
-          <label>{`${payload[0].name} : ${payload[0].value}`}</label>
+          <p>{`${payload[0].name} : ${payload[0].value}`}</p>
         </div>
       );
     }
