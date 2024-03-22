@@ -16,11 +16,11 @@ const Statistics = () => {
   const { data: localStorageData } = useLocalStorage();
 
   const data = [
-    { name: "Your Donation", value: localStorageData.length },
     {
-      name: "Total Donation",
+      name: "Available Donation",
       value: donationData.length - localStorageData.length,
     },
+    { name: "Your Donation", value: localStorageData.length },
   ];
   const COLORS = ["#FF444A", "#00C49F"];
   const RADIAN = Math.PI / 180;
